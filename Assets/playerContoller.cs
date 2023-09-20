@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public float collisionOffset = 0.05f;
     public ContactFilter2D movementFilter;
     public SwordAttack swordAttack;
-
+    AudioManager audioManager;
     Vector2 movementInput;
     SpriteRenderer spriteRenderer;
     Rigidbody2D rb;
@@ -19,6 +19,10 @@ public class PlayerController : MonoBehaviour
 
     bool canMove = true;
 
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -108,6 +112,7 @@ public class PlayerController : MonoBehaviour
     public void SwordAttack()
     {
         LockMovement();
+        
 
         if (spriteRenderer.flipX == true)
         {
@@ -117,6 +122,9 @@ public class PlayerController : MonoBehaviour
         {
             swordAttack.AttackRight();
         }
+
+        // Play the "hit" sound effect
+        audioManager.PlaySFX(audioManager.hit);
     }
 
     public void EndSwordAttack()

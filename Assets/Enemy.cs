@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     Animator animator;
+    AudioManager audioManager;
 
     public float Health
     {
@@ -25,6 +26,11 @@ public class Enemy : MonoBehaviour
 
     public float health = 1;
 
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -37,6 +43,8 @@ public class Enemy : MonoBehaviour
 
     public void RemoveEnemy()
     {
+        // Play the "hit" sound effect
+        audioManager.PlaySFX(audioManager.SlimeDeath);
         Destroy(gameObject);
     }
 }
