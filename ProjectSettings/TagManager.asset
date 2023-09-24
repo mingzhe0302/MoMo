@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Tilemap
   - Audio
+  - ColliderSet
   layers:
   - Default
   - TransparentFX
@@ -15,10 +16,10 @@ TagManager:
   - Water
   - UI
   - Deco
-  - 
-  - 
-  - 
-  - 
+  - Damageable
+  - Player
+  - Land
+  - ColliderSet
   - 
   - 
   - 
@@ -44,6 +45,39 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Land
+    uniqueID: 782951165
+    locked: 0
+  - name: water
+    uniqueID: 2037266383
+    locked: 0
+  - name: bridge
+    uniqueID: 4202750237
+    locked: 0
+  - name: grass
+    uniqueID: 3597201837
+    locked: 0
+  - name: setOutItems
+    uniqueID: 2919712679
+    locked: 0
+  - name: tree
+    uniqueID: 3489907747
+    locked: 0
+  - name: ColliderSet
+    uniqueID: 2696062359
+    locked: 0
   - name: Player
     uniqueID: 139918829
+    locked: 0
+  - name: arched door
+    uniqueID: 2807669555
+    locked: 0
+  - name: mountain
+    uniqueID: 3045444367
+    locked: 0
+  - name: candle
+    uniqueID: 3394567147
+    locked: 0
+  - name: Canvas
+    uniqueID: 3798659031
     locked: 0
