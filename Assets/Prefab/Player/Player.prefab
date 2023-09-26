@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd188d12c4f5fd04b94b1f139162c34d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 1
   collisionOffset: 0.05
   movementFilter:
     useTriggers: 0
@@ -143,12 +143,12 @@ MonoBehaviour:
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 1
+      m_Bits: 0
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  swordAttack: {fileID: 2495070683674995777}
+  swordAttack: {fileID: 0}
 --- !u!50 &8625130457635067410
 Rigidbody2D:
   serializedVersion: 4
