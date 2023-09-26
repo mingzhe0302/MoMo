@@ -9,7 +9,7 @@ public class AudioManager : MonoBehaviour
     [Header("-------- Audio Clip ----------")]
     public AudioClip background;
     public AudioClip hit;
-    public AudioClip SlimeDeath;
+    public AudioClip EnemyDeath;
 
     //when game start play bgm
     private void Start()

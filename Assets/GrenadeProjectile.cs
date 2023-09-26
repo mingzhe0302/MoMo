@@ -21,7 +21,8 @@ public class GrenadeProjectile : MonoBehaviour
     private float _timePassed;
     private Rigidbody2D _rb;
     private Animator _animator;
-    
+    private bool _exploded = false;
+
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -45,10 +46,15 @@ public class GrenadeProjectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        _rb.simulated = false;
-        transform.rotation = Quaternion.identity;
-        transform.localScale *= explosionSize;
-        StartCoroutine(PlayAndWaitForAnim(_animator, "Explosion"));
+        if (!_exploded)
+        {
+            _rb.simulated = false;
+            transform.rotation = Quaternion.identity;
+            transform.localScale *= explosionSize;
+
+            _exploded = true;
+            StartCoroutine(PlayAndWaitForAnim(_animator, "Explosion"));
+        }
     }
 
     private void attack()

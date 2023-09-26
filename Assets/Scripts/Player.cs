@@ -73,7 +73,7 @@ public class Player : BaseCharacterBehaviour
 
     public override void attack()
     {
-        weaponAttack.attack(currentWeapon, targetTransform);
+        weaponAttack.attack(currentWeapon, targetTransform, true);
     }
 
     public void flip()

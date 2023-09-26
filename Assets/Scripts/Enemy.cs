@@ -86,7 +86,7 @@ public class Enemy : BaseCharacterBehaviour
 
     public override void attack()
     {
-        if(hasAttackAnimation && weaponAttack.attack(currentWeapon ,targetTransform.position))
+        if(hasAttackAnimation && weaponAttack.attack(currentWeapon ,targetTransform.position, !hasAttackAnimation))
             _characterAnimationEvents.attack();
     }
 

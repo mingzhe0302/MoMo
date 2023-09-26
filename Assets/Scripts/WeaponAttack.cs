@@ -27,7 +27,7 @@ public class WeaponAttack : MonoBehaviour
         timePassed += Time.deltaTime;
     }
 
-    public bool attack(WeaponBaseClass weapon, UnityEngine.Vector2 targetPos)
+    public bool attack(WeaponBaseClass weapon, UnityEngine.Vector2 targetPos, bool playFireAnimation)
     {
         if (timePassed > weapon.attackrate)
         {
@@ -41,12 +41,13 @@ public class WeaponAttack : MonoBehaviour
     }
     
     //return true when successfully attacked
-    public bool attack(WeaponBaseClass weapon, Transform targetTransform)
+    public bool attack(WeaponBaseClass weapon, Transform targetTransform, bool playFireAnimation)
     {
         if (timePassed > weapon.attackrate)
         {
             timePassed = 0;
-            playFiringAni();
+            if(playFireAnimation)
+                playFiringAni();
             useWeapon(weapon, targetTransform);
             return true;
         }

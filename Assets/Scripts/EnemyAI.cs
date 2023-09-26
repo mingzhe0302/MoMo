@@ -21,7 +21,8 @@ public class EnemyAI
     {
         AlwaysAttack,
         AttackAtDistance,
-        DoNotAttack
+        DoNotAttack,
+        AttackWhenTouch
     }
     
     public MovementBehaviour movementBehaviour;
@@ -99,6 +100,9 @@ public class EnemyAI
             
             case 2:
                 return false;
+            
+            case 3:
+                return (distanceFromCurrentToAimmed < 1f);
                     
         }
         return false;
